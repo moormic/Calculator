@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         bindOperatorListeners();
     }
 
-
     private void initialise() {
         button0 = findViewById(R.id.button0);
         button1 = findViewById(R.id.button1);
