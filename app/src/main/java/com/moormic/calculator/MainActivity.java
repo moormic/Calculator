@@ -16,27 +16,11 @@ import lombok.Getter;
 
 public class MainActivity extends AppCompatActivity {
     private static final int MAX_INPUT_LENGTH = 32;
-    private static final int RESULT_SIGNIFICANT_DIGITS = 10;
     private static final String OPERATOR_PADDING = " ";
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
-    private Button buttonC;
-    private Button buttonAdd;
-    private Button buttonSubtract;
-    private Button buttonMultiply;
-    private Button buttonDivide;
-    private Button buttonEquals;
+    private Button button0, button1, button2, button3, button4, button5, button6, button7, button8,
+                    button9, buttonC, buttonAdd, buttonSubtract, buttonMultiply, buttonDivide, buttonEquals;
     private String inputString;
-    private TextView inputView;
-    private TextView resultView;
+    private TextView inputView, resultView;
     private float result;
 
     @Override
@@ -44,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialise();
-
         bindClearListener();
         bindEqualsListener();
         bindNumberListeners();
@@ -87,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         buttonEquals.setOnClickListener(v -> {
             if (lastInputIsDigit()) {
                 result = calculate();
-                // todo: round result to X dp
                 refreshViews();
             }
         });
